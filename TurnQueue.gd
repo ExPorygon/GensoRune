@@ -16,8 +16,9 @@ func _process(delta):
 		play_turn()
 
 func play_turn():
-	print("Turn Start")
-	yield(active_char.play_turn(), "completed")
-	var new_index : int = (active_char.get_index()+1) % get_child_count()
-	active_char = get_child(new_index)
-	print("Turn End")
+#	print("Turn Start")
+#	yield(active_char.play_turn(), "completed")
+#	var new_index : int = (active_char.get_index()+1) % get_child_count()
+#	active_char = get_child(new_index)
+#	print("Turn End")
+	pass

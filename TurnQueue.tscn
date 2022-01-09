@@ -1,41 +1,89 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://enemy/Enemy.tscn" type="PackedScene" id=1]
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://enemy/Enemy1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/Player1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://TurnQueue.gd" type="Script" id=3]
+[ext_resource path="res://player/player1_stats.tres" type="Resource" id=4]
+[ext_resource path="res://player/player2_stats.tres" type="Resource" id=5]
+[ext_resource path="res://enemy/enemy1_stats.tres" type="Resource" id=6]
 
 [node name="TurnQueue" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="Enemy" parent="." instance=ExtResource( 1 )]
 position = Vector2( 502, 124 )
+stats = ExtResource( 6 )
 
 [node name="Sprite" parent="Enemy" index="0"]
 modulate = Color( 1, 0.219608, 1, 1 )
 
-[node name="Label" type="Label" parent="Enemy"]
-margin_left = -31.0
-margin_top = 91.0
-margin_right = 43.0
-margin_bottom = 119.0
+[node name="HP" parent="Enemy" index="2"]
+margin_left = -28.0
+margin_top = 11.0
+margin_right = 12.0
+margin_bottom = 25.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MP" parent="Enemy" index="3"]
+margin_left = -26.0
+margin_top = 27.0
+margin_right = 14.0
+margin_bottom = 41.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Player1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 308, 416 )
+stats = ExtResource( 4 )
 
 [node name="Sprite" parent="Player1" index="0"]
 modulate = Color( 1, 0.219608, 0.219608, 1 )
 
+[node name="HP" parent="Player1" index="2"]
+margin_left = -28.0
+margin_top = 11.0
+margin_right = 12.0
+margin_bottom = 25.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MP" parent="Player1" index="3"]
+margin_left = -26.0
+margin_top = 27.0
+margin_right = 14.0
+margin_bottom = 41.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Player2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 681, 416 )
+stats = ExtResource( 5 )
 
 [node name="Sprite" parent="Player2" index="0"]
 modulate = Color( 0.219608, 0.219608, 1, 1 )
 
-[connection signal="damaged_enemy" from="Player1" to="Enemy" method="on_damaged_enemy"]
-[connection signal="damaged_enemy" from="Player2" to="Enemy" method="on_damaged_enemy"]
+[node name="HP" parent="Player2" index="2"]
+margin_left = -28.0
+margin_top = 11.0
+margin_right = 12.0
+margin_bottom = 25.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MP" parent="Player2" index="3"]
+margin_left = -26.0
+margin_top = 27.0
+margin_right = 14.0
+margin_bottom = 41.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [editable path="Enemy"]
 [editable path="Player1"]

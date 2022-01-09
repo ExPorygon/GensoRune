@@ -10,19 +10,24 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Entity",
-"class": "Enemy",
+"class": "Battler",
 "language": "GDScript",
-"path": "res://enemy/Enemy.gd"
+"path": "res://Battler.gd"
+}, {
+"base": "Node",
+"class": "BattlerAI",
+"language": "GDScript",
+"path": "res://BattlerAI.gd"
+}, {
+"base": "Resource",
+"class": "CharacterStats",
+"language": "GDScript",
+"path": "res://CharacterStats.gd"
 }, {
 "base": "Node2D",
 "class": "Entity",
 "language": "GDScript",
 "path": "res://Entity.gd"
-}, {
-"base": "Entity",
-"class": "Player",
-"language": "GDScript",
-"path": "res://player/Player.gd"
 }, {
 "base": "Node2D",
 "class": "TurnQueue",
@@ -30,9 +35,10 @@ _global_script_classes=[ {
 "path": "res://TurnQueue.gd"
 } ]
 _global_script_class_icons={
-"Enemy": "",
+"Battler": "",
+"BattlerAI": "",
+"CharacterStats": "",
 "Entity": "",
-"Player": "",
 "TurnQueue": ""
 }
 

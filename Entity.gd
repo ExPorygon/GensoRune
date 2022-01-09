@@ -4,12 +4,6 @@ extends Node2D
 
 onready var _value = {}
 
-
-export var life = 50
-export var attack = 5
-export var defense = 2
-
-
 func set_value(key,value):
 	_value[key] = value
 	
