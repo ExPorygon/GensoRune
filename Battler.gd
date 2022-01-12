@@ -6,6 +6,7 @@ export var stats : Resource
 
 onready var ai = $AI
 onready var Status_Label = $Status
+var isGuardine = false
 
 func _ready():
 	stats.reset()
