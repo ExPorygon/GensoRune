@@ -21,9 +21,6 @@ stats = ExtResource( 6 )
 [node name="Sprite" parent="Enemy1" index="0"]
 modulate = Color( 1, 0.219608, 1, 1 )
 
-[node name="AI" parent="Enemy1" index="1"]
-script = ExtResource( 8 )
-
 [node name="Actions" type="Node" parent="Enemy1"]
 
 [node name="Attack" type="Node" parent="Enemy1/Actions"]
@@ -32,15 +29,15 @@ script = ExtResource( 10 )
 [node name="Guard" type="Node" parent="Enemy1/Actions"]
 script = ExtResource( 9 )
 
+[node name="AI" parent="Enemy1" index="2"]
+script = ExtResource( 8 )
+
 [node name="Player1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 308, 416 )
 stats = ExtResource( 4 )
 
 [node name="Sprite" parent="Player1" index="0"]
 modulate = Color( 1, 0.219608, 0.219608, 1 )
-
-[node name="AI" parent="Player1" index="1"]
-script = ExtResource( 7 )
 
 [node name="Actions" type="Node" parent="Player1"]
 
@@ -50,15 +47,15 @@ script = ExtResource( 10 )
 [node name="Guard" type="Node" parent="Player1/Actions"]
 script = ExtResource( 9 )
 
+[node name="AI" parent="Player1" index="2"]
+script = ExtResource( 7 )
+
 [node name="Player2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 681, 416 )
 stats = ExtResource( 5 )
 
 [node name="Sprite" parent="Player2" index="0"]
 modulate = Color( 0.219608, 0.219608, 1, 1 )
-
-[node name="AI" parent="Player2" index="1"]
-script = ExtResource( 7 )
 
 [node name="Actions" type="Node" parent="Player2"]
 
@@ -67,6 +64,9 @@ script = ExtResource( 10 )
 
 [node name="Guard" type="Node" parent="Player2/Actions"]
 script = ExtResource( 9 )
+
+[node name="AI" parent="Player2" index="2"]
+script = ExtResource( 7 )
 
 [editable path="Enemy1"]
 [editable path="Player1"]
