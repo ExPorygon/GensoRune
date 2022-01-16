@@ -5,7 +5,6 @@ func choose_action(actor : Battler):
 	add_child(label)
 	
 	var result = rand_int(2)
-	print(result)
 	var action: CombatAction
 	if result == 0:
 		label.text = "Enemy attacks!"

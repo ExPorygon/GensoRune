@@ -6,3 +6,4 @@ func execute(target: Battler):
 	if target.isGuarding:
 		damage = damage / 2
 	target.stats.health -= damage
+	emit_signal("output_text",actor.name + " does " + str(damage) + " damage to " + target.name)
