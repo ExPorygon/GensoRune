@@ -1,4 +1,4 @@
 extends CombatAction
 
-func execute(target):
+func execute(target: Battler):
 	actor.isGuarding = true

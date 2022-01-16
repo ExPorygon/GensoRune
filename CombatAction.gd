@@ -4,6 +4,6 @@ class_name CombatAction
 
 onready var actor = get_parent().get_parent()
 
-func execute(targets : Array):
+func execute(target: Battler):
 	pass
 

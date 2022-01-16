@@ -1,8 +1,8 @@
 extends CombatAction
 
-func execute(target):
+func execute(target: Battler):
 	var damage: int
 	damage = actor.stats.attack - target.stats.defense
 	if target.isGuarding:
 		damage = damage / 2
-	target.health -= damage
+	target.stats.health -= damage
