@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://enemy/Enemy1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/Player1.tscn" type="PackedScene" id=2]
@@ -8,8 +8,6 @@
 [ext_resource path="res://enemy/enemy1_stats.tres" type="Resource" id=6]
 [ext_resource path="res://player/player_ai.gd" type="Script" id=7]
 [ext_resource path="res://enemy/enemy_ai.gd" type="Script" id=8]
-[ext_resource path="res://Guard.gd" type="Script" id=9]
-[ext_resource path="res://Attack.gd" type="Script" id=10]
 
 [node name="TurnQueue" type="Node2D"]
 script = ExtResource( 3 )
@@ -24,14 +22,6 @@ modulate = Color( 1, 0.219608, 1, 1 )
 [node name="AI" parent="Enemy1" index="1"]
 script = ExtResource( 8 )
 
-[node name="Actions" type="Node" parent="Enemy1"]
-
-[node name="Attack" type="Node" parent="Enemy1/Actions"]
-script = ExtResource( 10 )
-
-[node name="Guard" type="Node" parent="Enemy1/Actions"]
-script = ExtResource( 9 )
-
 [node name="Player1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 308, 416 )
 stats = ExtResource( 4 )
@@ -42,14 +32,6 @@ modulate = Color( 1, 0.219608, 0.219608, 1 )
 [node name="AI" parent="Player1" index="1"]
 script = ExtResource( 7 )
 
-[node name="Actions" type="Node" parent="Player1"]
-
-[node name="Attack" type="Node" parent="Player1/Actions"]
-script = ExtResource( 10 )
-
-[node name="Guard" type="Node" parent="Player1/Actions"]
-script = ExtResource( 9 )
-
 [node name="Player2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 681, 416 )
 stats = ExtResource( 5 )
@@ -59,14 +41,6 @@ modulate = Color( 0.219608, 0.219608, 1, 1 )
 
 [node name="AI" parent="Player2" index="1"]
 script = ExtResource( 7 )
-
-[node name="Actions" type="Node" parent="Player2"]
-
-[node name="Attack" type="Node" parent="Player2/Actions"]
-script = ExtResource( 10 )
-
-[node name="Guard" type="Node" parent="Player2/Actions"]
-script = ExtResource( 9 )
 
 [editable path="Enemy1"]
 [editable path="Player1"]
