@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://CharacterStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+max_health = 18
+max_mana = 8
+attack = 3
+defense = 1
+speed = 4
+level = 1
+experience = 0

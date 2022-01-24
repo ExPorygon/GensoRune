@@ -26,7 +26,7 @@ func choose_target(actor : Battler, action: CombatAction, battlers : Array = [])
 	else:
 		target = get_parent().get_parent().get_node("Player2")
 	
-	for i in 10: #this wait is necessary to avoid an error with some regard to the function completed signal, will have to investigate later
+	for i in 10: #a wait of at least one frame is necessary for this function to behave as a coroutine
 		yield(get_tree(), "idle_frame")
 	return target
 
