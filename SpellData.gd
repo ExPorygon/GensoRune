@@ -1,11 +1,11 @@
 extends Resource
 
-class_name Spell
+class_name SpellData
 
 enum Target {
+	ENEMY,
 	SELF,
 	PARTY,
-	ENEMY,
 }
 
 enum Group {

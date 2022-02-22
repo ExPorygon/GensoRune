@@ -27,5 +27,9 @@ __meta__ = {
 [node name="Attack" type="Node" parent="Actions"]
 script = ExtResource( 4 )
 
+[node name="Spell" type="Node" parent="Actions"]
+
 [node name="Guard" type="Node" parent="Actions"]
 script = ExtResource( 3 )
+
+[node name="Spells" type="Node" parent="."]

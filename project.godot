@@ -50,9 +50,9 @@ _global_script_classes=[ {
 "path": "res://SelectArrow.gd"
 }, {
 "base": "Resource",
-"class": "Spell",
+"class": "SpellData",
 "language": "GDScript",
-"path": "res://Spell.gd"
+"path": "res://SpellData.gd"
 }, {
 "base": "Node2D",
 "class": "TurnQueue",
@@ -68,7 +68,7 @@ _global_script_class_icons={
 "Console": "",
 "Entity": "",
 "SelectArrow": "",
-"Spell": "",
+"SpellData": "",
 "TurnQueue": ""
 }
 
