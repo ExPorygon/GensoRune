@@ -11,6 +11,10 @@ func choose_action(actor : Battler):
 	action = yield(menu,"action_selected")
 	return action
 
+func choose_spell(actor : Battler):
+	var spell: SpellAction
+	var menu = BattleMenu.instance()
+
 func choose_target(actor : Battler, action: CombatAction, battlers : Array = []):
 	var arrow = SelectArrow.instance()
 	actor.add_child(arrow)

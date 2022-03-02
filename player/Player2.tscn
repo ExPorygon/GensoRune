@@ -1,0 +1,21 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Spell.gd" type="Script" id=1]
+[ext_resource path="res://player/heart.png" type="Texture" id=2]
+[ext_resource path="res://player/spells/BoulderBash.tres" type="Resource" id=3]
+[ext_resource path="res://Battler.tscn" type="PackedScene" id=4]
+[ext_resource path="res://player/player_ai.gd" type="Script" id=5]
+[ext_resource path="res://player/player2_stats.tres" type="Resource" id=6]
+
+[node name="Player2" instance=ExtResource( 4 )]
+stats = ExtResource( 6 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="AI" parent="." index="1"]
+script = ExtResource( 5 )
+
+[node name="BoulderBash" type="Node" parent="Spells" index="0"]
+script = ExtResource( 1 )
+spell = ExtResource( 3 )
