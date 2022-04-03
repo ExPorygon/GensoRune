@@ -2,7 +2,7 @@ extends CombatAction
 
 var action_name = "Attack"
 
-func execute(target: Battler):
+func execute(target):
 	var damage: int
 	damage = actor.stats.attack - target.stats.defense
 	if target.isGuarding:

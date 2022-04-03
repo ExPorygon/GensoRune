@@ -7,5 +7,6 @@ script = ExtResource( 1 )
 name = "Flower Flare"
 base_damage = 5
 mana_cost = 0
+accuracy = 0.0
 target_mode = 0
 group_mode = 0

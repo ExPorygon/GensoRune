@@ -54,7 +54,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Spell.gd"
 }, {
-"base": "Node",
+"base": "CombatAction",
 "class": "SpellAction",
 "language": "GDScript",
 "path": "res://SpellAction.gd"

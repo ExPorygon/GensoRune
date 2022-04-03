@@ -14,7 +14,7 @@ enum Group {
 	RANDOM,
 }
 
-export var name: String
+export var name: String = "Spell"
 
 export var base_damage: int
 export var mana_cost: int

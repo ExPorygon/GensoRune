@@ -11,36 +11,58 @@ __meta__ = {
 }
 
 [node name="MainMenu" type="VBoxContainer" parent="."]
-margin_right = 123.0
-margin_bottom = 122.0
+margin_right = 120.0
+margin_bottom = 120.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Attack" type="Button" parent="MainMenu"]
-margin_right = 123.0
+margin_right = 120.0
 margin_bottom = 27.0
 size_flags_vertical = 3
 text = "Attack"
 
 [node name="Spell" type="Button" parent="MainMenu"]
 margin_top = 31.0
-margin_right = 123.0
-margin_bottom = 59.0
+margin_right = 120.0
+margin_bottom = 58.0
 size_flags_vertical = 3
 text = "Spell"
 
 [node name="Guard" type="Button" parent="MainMenu"]
-margin_top = 63.0
-margin_right = 123.0
-margin_bottom = 90.0
+margin_top = 62.0
+margin_right = 120.0
+margin_bottom = 89.0
 size_flags_vertical = 3
 text = "Guard"
 
 [node name="Run" type="Button" parent="MainMenu"]
-margin_top = 94.0
-margin_right = 123.0
-margin_bottom = 122.0
+margin_top = 93.0
+margin_right = 120.0
+margin_bottom = 120.0
 focus_mode = 0
 size_flags_vertical = 3
 text = "Run"
+
+[node name="SpellMenu" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 125.0
+margin_right = 245.0
+margin_bottom = 120.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="SpellMenu"]
+margin_right = 120.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 0, 27 )
+focus_neighbour_left = NodePath(".")
+size_flags_vertical = 0
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="SpellMenu/Back" to="." method="_on_Back_pressed"]

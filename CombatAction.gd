@@ -7,6 +7,7 @@ signal battle_log_text
 onready var Game = get_tree().get_root().get_node_or_null("Game")
 onready var Console: Console
 onready var actor = get_parent().get_parent()
+onready var actor2 = get_parent().get_parent().get_parent()
 
 func _ready():
 	if Game:
@@ -17,6 +18,6 @@ func _ready():
 	else:
 		print("Console does not exist")
 
-func execute(target: Battler):
+func execute(target):
 	pass
 
