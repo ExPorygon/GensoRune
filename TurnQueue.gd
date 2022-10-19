@@ -23,8 +23,8 @@ func play_turn():
 	else:
 		opponents = get_enemies()
 	
-	action = yield(active_char.ai.choose_action(active_char), "completed")
-	target = yield(active_char.ai.choose_target(active_char,action,opponents), "completed")
+	action = await active_char.ai.choose_action(active_char).completed
+	target = await active_char.ai.choose_target(active_char,action,opponents).completed
 	
 	action.execute(target)
 	

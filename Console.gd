@@ -2,7 +2,7 @@ extends Control
 
 class_name Console
 
-onready var output = $Output
+@onready var output = $Output
 
 func _ready():
 	output.text = "Console"

@@ -14,7 +14,7 @@ func choose_action(actor : Battler):
 		action = actor.actions.get_node("Guard")
 		
 	for i in 60:
-		yield(get_tree(), "idle_frame")
+		await get_tree().process_frame
 	label.queue_free()
 	return action
 
@@ -27,7 +27,7 @@ func choose_target(actor : Battler, action: CombatAction, battlers : Array = [])
 		target = get_parent().get_parent().get_node("Player2")
 	
 	for i in 10: #a wait of at least one frame is necessary for this function to behave as a coroutine
-		yield(get_tree(), "idle_frame")
+		await get_tree().process_frame
 	return target
 
 func rand_int(r):

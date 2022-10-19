@@ -5,19 +5,19 @@ const SelectArrow = preload("res://SelectArrow.tscn")
 
 func choose_action(actor : Battler):
 	var action: CombatAction
-	var menu =  BattleMenu.instance()
+	var menu =  BattleMenu.instantiate()
 	actor.add_child(menu)
 	menu.init(actor)
-	action = yield(menu,"action_selected")
+	action = await menu.action_selected
 	return action
 
 func choose_spell(actor : Battler):
 	var spell: SpellAction
-	var menu = BattleMenu.instance()
+	var menu = BattleMenu.instantiate()
 
 func choose_target(actor : Battler, action: CombatAction, battlers : Array = []):
-	var arrow = SelectArrow.instance()
+	var arrow = SelectArrow.instantiate()
 	actor.add_child(arrow)
 	var target
-	target = arrow.select_target(battlers)
+	target = await arrow.select_target(battlers)
 	return target

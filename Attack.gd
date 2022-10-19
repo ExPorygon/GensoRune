@@ -8,4 +8,4 @@ func execute(target):
 	if target.isGuarding:
 		damage = damage / 2
 	target.stats.health -= damage
-	emit_signal("battle_log_text",actor.name + " attacks! " + target.name + " takes " + str(damage) + " damage!")
+	battle_log_text.emit(str(actor.name) + " attacks! " + str(target.name) + " takes " + str(damage) + " damage!")

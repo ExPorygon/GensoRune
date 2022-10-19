@@ -1,24 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://dtfxtoocg4kcv"]
 
-[ext_resource path="res://Console.gd" type="Script" id=1]
-
-[sub_resource type="StyleBoxEmpty" id=1]
+[ext_resource type="Script" path="res://Console.gd" id="1"]
 
 [node name="Console" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("1")
 
 [node name="Output" type="TextEdit" parent="."]
-margin_left = 2.0
-margin_top = 56.0
-margin_right = 324.0
-margin_bottom = 280.0
-custom_styles/normal = SubResource( 1 )
-syntax_highlighting = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+offset_left = 2.0
+offset_top = 56.0
+offset_right = 324.0
+offset_bottom = 280.0

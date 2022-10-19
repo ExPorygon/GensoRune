@@ -2,7 +2,7 @@ class_name Entity
 
 extends Node2D
 
-onready var _value = {}
+@onready var _value = {}
 
 func set_value(key,value):
 	_value[key] = value

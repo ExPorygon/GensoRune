@@ -6,13 +6,13 @@ class_name BattlerAI
 func choose_action(actor : Battler):
 	"""
 	Select an action to perform in combat
-	Can be based on state of the actor
+	Can be based checked state of the actor
 	"""
 	pass
 	
 func choose_target(actor : Battler, action : CombatAction, battlers : Array = []):
 	"""
-	Chooses a target to perform an action on
+	Chooses a target to perform an action checked
 	"""
 	pass
 

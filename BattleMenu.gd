@@ -4,8 +4,8 @@ class_name BattleMenu
 
 signal action_selected()
 
-onready var MainMenu = $MainMenu
-onready var SpellMenu = $SpellMenu
+@onready var MainMenu = $MainMenu
+@onready var SpellMenu = $SpellMenu
 var Actor: Battler
 
 func _ready():
@@ -30,7 +30,7 @@ func init_main():
 		action_names.append(action.name)
 	
 	for button in buttons:
-		button.connect("pressed", self, "_on_Button_pressed",[button.name,button.get_parent()])
+		button.pressed.connect(Callable(self,"_on_Button_pressed").bind(button.name,button.get_parent()))
 		if action_names.find(button.name) == -1:
 			button.disabled = true
 			button.focus_mode = FOCUS_NONE
@@ -39,12 +39,12 @@ func create_button(spell):
 	var button = Button.new()
 	button.name = spell.name
 	button.text = spell.name
-	button.rect_min_size = Vector2(0,27)
+	#button.minimum_size = Vector2(0,27)
 	button.size_flags_vertical = 0
 	SpellMenu.add_child(button)
 	SpellMenu.move_child(button, 0)
-	button.connect("pressed", self, "_on_Button_pressed",[button.name,button.get_parent()])
-	button.focus_neighbour_left = button.get_path()
+	button.pressed.connect(Callable(self,"_on_Button_pressed").bind(button.name,button.get_parent()))
+	button.focus_neighbor_left = button.get_path()
 	return button
 
 func _on_Button_pressed(name,parent):
@@ -57,11 +57,11 @@ func _on_Button_pressed(name,parent):
 	
 	var action: CombatAction
 	if parent.name == "MainMenu":
-		action = Actor.get_node("Actions/"+name)
+		action = Actor.get_node("Actions/"+str(name))
 	if parent.name == "SpellMenu":
-		action = Actor.get_node("Actions/Spell/"+name)
+		action = Actor.get_node("Actions/Spell/"+str(name))
 		
-	emit_signal("action_selected", action)
+	action_selected.emit(action)
 	queue_free()
 
 func _on_Back_pressed():

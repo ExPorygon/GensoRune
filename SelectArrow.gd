@@ -2,7 +2,7 @@ extends Control
 
 class_name SelectArrow
 
-onready var tween = $Tween
+@onready var tween = $Tween
 
 signal target_selected(target)
 
@@ -19,22 +19,23 @@ func select_target(battlers: Array):
 	set_global_position(active_target.global_position)
 	grab_focus()
 	var selected_target: Battler
-	selected_target = yield(self,"target_selected")
+	selected_target = await self.target_selected
 	#hide()
 	queue_free()
 	return selected_target
 
 func move_to(battler: Battler):
-	tween.interpolate_property(
-		self,
-		'rect_global_position',
-		rect_global_position,
-		battler.global_position,
-		0.1,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_OUT
-	)
-	tween.start()
+	#tween.tween_property(
+		#self,
+		#'global_position',
+		#global_position,
+		#battler.global_position,
+		#0.1,
+		#Tween.TRANS_LINEAR,
+		#Tween.EASE_OUT
+	#)
+	#tween.start()
+	pass
 
 func _gui_input(event):
 	if !visible:

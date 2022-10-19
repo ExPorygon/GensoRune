@@ -14,11 +14,11 @@ enum Group {
 	RANDOM,
 }
 
-export var name: String = "Spell"
+@export var name: String = "Spell"
 
-export var base_damage: int
-export var mana_cost: int
-export(float, 0.0, 1.0) var accuracy: float
+@export var base_damage: int
+@export var mana_cost: int
+@export var accuracy: float # (float, 0.0, 1.0)
 
-export(Target) var target_mode
-export(Group) var group_mode
+@export var target_mode: Target
+@export var group_mode: Group
