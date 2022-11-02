@@ -2,12 +2,11 @@ extends Control
 
 class_name SelectArrow
 
-@onready var tween = $Tween
-
 signal target_selected(target)
 
 var targets: Array
 var active_target: Battler
+var tween: Tween
 
 func _ready():
 	hide()
@@ -25,16 +24,8 @@ func select_target(battlers: Array):
 	return selected_target
 
 func move_to(battler: Battler):
-	#tween.tween_property(
-		#self,
-		#'global_position',
-		#global_position,
-		#battler.global_position,
-		#0.1,
-		#Tween.TRANS_LINEAR,
-		#Tween.EASE_OUT
-	#)
-	#tween.start()
+	tween = create_tween()
+	tween.tween_property(self,'global_position',battler.global_position,0.1).set_ease(Tween.EASE_OUT)
 	pass
 
 func _gui_input(event):
@@ -43,7 +34,7 @@ func _gui_input(event):
 	
 	if event.is_action_pressed("ui_accept"):
 		emit_signal("target_selected",active_target)
-		get_tree().set_input_as_handled()
+		get_viewport().set_input_as_handled()
 #	elif event.is_action_pressed("ui_cancel"):
 #		emit_signal("target_selected",null)
 	
@@ -51,9 +42,9 @@ func _gui_input(event):
 	if event.is_action_pressed("ui_right"):
 		active_target = targets[(index+1) % targets.size()]
 		move_to(active_target)
-		get_tree().set_input_as_handled()
+		get_viewport().set_input_as_handled()
 	if event.is_action_pressed("ui_left"):
 		active_target = targets[(index-1) % targets.size()]
 		move_to(active_target)
-		get_tree().set_input_as_handled()
+		get_viewport().set_input_as_handled()
 	

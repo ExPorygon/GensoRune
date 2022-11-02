@@ -21,4 +21,4 @@ func execute(target):
 	
 	target.stats.health -= damage
 	
-	emit_signal("battle_log_text",actor.name + " casts " + spell.name + "! " + target.name + " takes " + str(damage) + " damage!")
+	emit_signal("battle_log_text",str(actor.name) + " casts " + str(spell.name) + "! " + str(target.name) + " takes " + str(damage) + " damage!")
