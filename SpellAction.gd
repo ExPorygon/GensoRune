@@ -14,11 +14,11 @@ func execute(target):
 	actor.stats.mana -= spell.mana_cost
 	
 	var damage: int
-	damage = actor.stats.attack+spell.base_damage - target.stats.defense
+	damage = actor.stats.attack + spell.base_damage - target.stats.defense
 	
 	if target.isGuarding:
 		damage = damage / 2
 	
-	target.stats.health -= damage
+	target.damage(self,damage)
 	
-	emit_signal("battle_log_text",str(actor.name) + " casts " + str(spell.name) + "! " + str(target.name) + " takes " + str(damage) + " damage!")
+	#emit_signal("battle_log_text",str(actor.name) + " casts " + str(spell.name) + "! " + str(target.name) + " takes " + str(damage) + " damage!")

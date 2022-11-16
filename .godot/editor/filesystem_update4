@@ -1,6 +1,10 @@
 res://Game.tscn
+res://enemy/enemy_ai.gd
 res://TurnQueue.tscn
 res://Console.tscn
-res://SelectArrow.gd
 res://SelectArrow.tscn
+res://Attack.gd
+res://Battler.gd
 res://SpellAction.gd
+res://BattleMenu.gd
+res://Console.gd
