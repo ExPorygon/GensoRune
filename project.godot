@@ -8,88 +8,16 @@
 
 config_version=5
 
-_global_script_classes=[{
-"base": "Control",
-"class": &"BattleMenu",
-"language": &"GDScript",
-"path": "res://BattleMenu.gd"
-}, {
-"base": "Entity",
-"class": &"Battler",
-"language": &"GDScript",
-"path": "res://Battler.gd"
-}, {
-"base": "Node",
-"class": &"BattlerAI",
-"language": &"GDScript",
-"path": "res://BattlerAI.gd"
-}, {
-"base": "Resource",
-"class": &"CharacterStats",
-"language": &"GDScript",
-"path": "res://CharacterStats.gd"
-}, {
-"base": "Node",
-"class": &"CombatAction",
-"language": &"GDScript",
-"path": "res://CombatAction.gd"
-}, {
-"base": "Control",
-"class": &"Console",
-"language": &"GDScript",
-"path": "res://Console.gd"
-}, {
-"base": "Node2D",
-"class": &"Entity",
-"language": &"GDScript",
-"path": "res://Entity.gd"
-}, {
-"base": "Control",
-"class": &"SelectArrow",
-"language": &"GDScript",
-"path": "res://SelectArrow.gd"
-}, {
-"base": "Node",
-"class": &"Spell",
-"language": &"GDScript",
-"path": "res://Spell.gd"
-}, {
-"base": "CombatAction",
-"class": &"SpellAction",
-"language": &"GDScript",
-"path": "res://SpellAction.gd"
-}, {
-"base": "Resource",
-"class": &"SpellData",
-"language": &"GDScript",
-"path": "res://SpellData.gd"
-}, {
-"base": "Node2D",
-"class": &"TurnQueue",
-"language": &"GDScript",
-"path": "res://TurnQueue.gd"
-}]
-_global_script_class_icons={
-"BattleMenu": "",
-"Battler": "",
-"BattlerAI": "",
-"CharacterStats": "",
-"CombatAction": "",
-"Console": "",
-"Entity": "",
-"SelectArrow": "",
-"Spell": "",
-"SpellAction": "",
-"SpellData": "",
-"TurnQueue": ""
-}
-
 [application]
 
 config/name="GensoRune"
 run/main_scene="res://Game.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.png"
+
+[editor]
+
+export/convert_text_resources_to_binary=true
 
 [input]
 
