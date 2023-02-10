@@ -27,6 +27,7 @@ func _ready():
 	if Game:
 		Console = Game.get_node_or_null("Console")
 	defeated.connect(Callable(Console,'on_battler_defeated'))
+	defeated.connect(_on_defeated)
 	damaged.connect(Callable(Console,'on_battler_damaged'))
 
 func init_spells(spells: Array) -> void:
@@ -43,10 +44,14 @@ func damage(source,amount):
 		amount = amount / 2
 	stats.health-=amount
 	damaged.emit(source,self,damage)
-	if stats.health<=stats.max_health:
-		alive = false
+	if stats.health<=0:
 		defeated.emit(self)
 		#battle_log_text.emit(str(name) + " is defeated!")
+
+func _on_defeated(battler):
+	print("defeated")
+	alive = false
+	remove_from_group("enemies")
 
 func get_actions():
 	return actions.get_children()
